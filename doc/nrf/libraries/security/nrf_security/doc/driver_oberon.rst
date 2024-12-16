@@ -513,6 +513,8 @@ Key types
      - ``PSA_KEY_TYPE_DH_PUBLIC_KEY(group)``
      - |notsupported|
 
+TODO Document that RSA key pair generation is not supported
+
 Key sizes
 ---------
 
