@@ -275,19 +275,11 @@ Asymmetric encryption
 
    * - RSA PKCS#1 v1.5 crypt
      - ``PSA_ALG_RSA_PKCS1V15_CRYPT``
-<<<<<<< HEAD
-     - |notsupported|
-
-   * - RSA OAEP
-     - ``PSA_ALG_RSA_OAEP(hash_alg)``
-     - |notsupported|
-=======
      - |supported|
 
    * - RSA OAEP
      - ``PSA_ALG_RSA_OAEP(hash_alg)``
      - |supported|
->>>>>>> 6f9bad8e24 (WiP)
 
 
 Key agreement

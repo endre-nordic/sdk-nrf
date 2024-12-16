@@ -1,7 +1,7 @@
 .. _psa_crypto_feature_configuration:
 
-PSA Crypto driver feature configuration
-#######################################
+PSA Crypto feature configuration
+################################
 
 .. contents::
    :local:
@@ -10,6 +10,10 @@ PSA Crypto driver feature configuration
 Configuration system introduced by Mbed TLS.
 
 Adopted by Oberon PSA core
+
+Dead code removal
+
+Driver architecture
 
 Also used by by libraries to enable/disable functionality based on crypto availability. For instance tls and x509.
 
@@ -25,7 +29,7 @@ Configuration options
 *********************
 
 Random number generation
-------------------------
+========================
 
 :kconfig:option:`PSA_WANT_GENERATE_RANDOM``
    Enable support for :c:func:`psa_generate_random`.
@@ -41,7 +45,8 @@ Random number generation
 .. _psa_crypto_feature_configuration_key_types:
 
 Key types
----------
+=========
+
 * :kconfig:option:`PSA_WANT_KEY_TYPE_PASSWORD`
 * :kconfig:option:`PSA_WANT_KEY_TYPE_PASSWORD_HASH`
 * :kconfig:option:`PSA_WANT_KEY_TYPE_PEPPER`
@@ -76,7 +81,7 @@ Key types
 .. _psa_crypto_feature_configuration_key_sizes:
 
 Key sizes
----------
+=========
 
 * :kconfig:option:`PSA_WANT_AES_KEY_SIZE_128`
 * :kconfig:option:`PSA_WANT_AES_KEY_SIZE_192`
@@ -90,7 +95,7 @@ Key sizes
 * :kconfig:option:`PSA_WANT_RSA_KEY_SIZE_8192`
 
 Ciphers
--------
+=======
 
 * :kconfig:option:`PSA_WANT_ALG_STREAM_CIPHER`
 * :kconfig:option:`PSA_WANT_ALG_ECB_NO_PADDING`
@@ -99,10 +104,12 @@ Ciphers
 * :kconfig:option:`PSA_WANT_ALG_CTR`
 * :kconfig:option:`PSA_WANT_ALG_XTS`
 * :kconfig:option:`PSA_WANT_ALG_CHACHA20`
+* :kconfig:option:`PSA_WANT_ALG_CCM_STAR_NO_TAG`
+
 
 
 MAC
----
+===
 
 When configuring MAC algorithm, the application additionally needs to enable the
 required :ref:`key type <psa_crypto_feature_configuration_key_types>`
@@ -130,15 +137,14 @@ and :ref:`key size(s) <psa_crypto_feature_configuration_key_sizes>`.
 
 
 Authenticated encryption with additional data
----------------------------------------------
+=============================================
 
 * :kconfig:option:`PSA_WANT_ALG_CCM`
-* :kconfig:option:`PSA_WANT_ALG_CCM_STAR_NO_TAG`
 * :kconfig:option:`PSA_WANT_ALG_CHACHA20_POLY1305`
 * :kconfig:option:`PSA_WANT_ALG_GCM`
 
 Hash
-----
+====
 
 .. list-table:: Hash feature configurations
    :header-rows: 1
@@ -183,13 +189,13 @@ Hash
      - :kconfig:option:`PSA_WANT_ALG_SHAKE256_512`
 
 Key agreement
--------------
+=============
 
 * :kconfig:option:`PSA_WANT_ALG_ECDH`
 * :kconfig:option:`PSA_WANT_ALG_FFDH`
 
 Asymmetric signature
---------------------
+====================
 
 * :kconfig:option:`PSA_WANT_ALG_DETERMINISTIC_ECDSA`
 * :kconfig:option:`PSA_WANT_ALG_ECDSA`
@@ -203,7 +209,7 @@ Asymmetric signature
 * :kconfig:option:`PSA_WANT_ALG_RSA_PSS`
 
 Elliptical curves
------------------
+=================
 
 .. rst-class:: rst-columns
 
@@ -236,7 +242,7 @@ Elliptical curves
 * :kconfig:option:`PSA_WANT_ECC_SECP_R1_521`
 
 Key derivation
---------------
+==============
 
 * :kconfig:option:`PSA_WANT_ALG_HKDF`
 * :kconfig:option:`PSA_WANT_ALG_HKDF_EXTRACT`
@@ -251,13 +257,13 @@ Key derivation
 
 
 Asymmetric encryption
----------------------
+=====================
 
 * :kconfig:option:`PSA_WANT_ALG_RSA_OAEP`
 * :kconfig:option:`PSA_WANT_ALG_RSA_PKCS1V15_CRYPT`
 
 Password-authenticated key exchange
------------------------------------
+===================================
 
 * :kconfig:option:`PSA_WANT_ALG_JPAKE`
 * :kconfig:option:`PSA_WANT_ALG_SPAKE2P`
