@@ -15,6 +15,11 @@ This library conforms to the specific revision of Mbed TLS that is supplied thro
    :maxdepth: 2
    :caption: Subpages:
 
+   doc/psa_crypto_feature_cfg.rst
+   doc/driver_cracen.rst
+   doc/driver_cc3xx.rst
+   doc/driver_oberon.rst
+   doc/ssf_crypto_service.rst
    doc/configuration
    doc/drivers
    doc/driver_config
